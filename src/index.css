@@ -11,3 +11,92 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.formom{
+    margin-top: 5%;
+    text-align: center;
+    color: purple;
+    font-size: 50px;
+}
+
+html, body{
+	margin: 0px;
+	height: 100%;
+  width: 100%;
+  background-color:green;
+}
+
+.clock{
+    position:fixed;
+    top:0px;
+    right: 30px;
+}
+
+.game{
+    position: absolute;
+        /* game takes up 100 percent of the screen*/
+    height: 100%;
+    width: 100%;
+    background-color: green;
+}
+
+.board{
+	    /* keeps columns next to each other*/
+    display: flex;
+    flex-direction:row;
+    position: relative;
+        /* size of the board*/
+    width: 1840px;
+    height: 720px;
+        /* positioning the board on the screen*/
+    left: 22%;
+    margin-top: 3%;
+}
+
+.column{
+    border-radius: 50%;
+    position: relative;
+    right: 6px;
+    bottom: 3px;
+}
+
+.circle{
+    height: 120px;
+    width: 120px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    right: 6px;
+    bottom: 3px;
+}
+
+.square{
+    border: 1px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    height: 120px;
+    width: 120px;
+    background-color: yellow;
+    position: relative
+}
+
+.circleRed{
+    height: 120px;
+    width: 120px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    right: 6px;
+    bottom: 3px;
+}
+
+.circleBlack{
+    height: 120px;
+    width: 120px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    right: 6px;
+    bottom: 3px;
+}
