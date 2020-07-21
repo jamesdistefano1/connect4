@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//import App from './App';
+//import * as serviceWorker from './serviceWorker';
 //import { ReactComponent } from '*.svg';
 
 var redTurn = true;
-/*
+
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -35,7 +35,7 @@ class App extends React.Component{
     }
     
     this.board = this.board.bind(this);
-  }
+  }*/
   play(){
      // on a click, if the square in the column is white, it changes to the correct player color, if not, nothing happens
   }
@@ -55,7 +55,7 @@ class App extends React.Component{
       </div>
       )
     }
-    else 
+    else */
     return (
       <div className ="game">
         <Clock/>
@@ -92,6 +92,7 @@ class Column extends React.Component{
       col5: this.props.c.s5,
       col6: this.props.c.s6
     };
+    this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
     redTurn = !redTurn;
@@ -181,7 +182,7 @@ class Clock extends React.Component{
   }
   
 }
-*/
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
