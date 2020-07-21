@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 //import { ReactComponent } from '*.svg';
 
 var redTurn = true;
-
+/*
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -35,7 +35,7 @@ class App extends React.Component{
     }
     
     this.board = this.board.bind(this);
-  }*/
+  }
   play(){
      // on a click, if the square in the column is white, it changes to the correct player color, if not, nothing happens
   }
@@ -55,11 +55,10 @@ class App extends React.Component{
       </div>
       )
     }
-    else */
+    else 
     return (
       <div className ="game">
         <Clock/>
-        <ForMom/>
         <div className="board">
           {this.makeColumn(1, this.state.column1)}
           {this.makeColumn(2, this.state.column2)}
@@ -74,18 +73,6 @@ class App extends React.Component{
   }
 }
 
-
-class ForMom extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-      <h1 className="formom">Are you happy now Mom?</h1>
-    );
-  }
-    
-}
 
 class Column extends React.Component{
   constructor(props){
@@ -194,7 +181,7 @@ class Clock extends React.Component{
   }
   
 }
-
+*/
 ReactDOM.render(
   <React.StrictMode>
     <App />
