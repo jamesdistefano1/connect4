@@ -8,37 +8,48 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      column1: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column2: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column3: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column4: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column5: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column6: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
-      column7: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column1: {id: 1, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column2: {id: 2, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column3: {id: 3, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column4: {id: 4, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column5: {id: 5, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column6: {id: 6, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      column7: {id: 7, s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
+      gameOver: false
     }
     this.play = this.play.bind(this);
   }
-  play(){
+  play(id, col1, col2, col3, col4, col5, col6){
+    this.setState((prevState) => {
+      // use prev state but update column that was added to
+    });
+    checkGameEnds();
      // on a click, if the square in the column is white, it changes to the correct player color, if not, nothing happens
   }
-  makeColumn(id, c){
-    return <Column id={id} c={c}/>;
+  checkGameEnds(){
+    this.setState((state, props) => {
+      if(this.state.s6!="circle" && this.state.column1.s6===this.state.column1.s5===this.state.column1.s4===this.state.s3) return {gameOver: true};
+    });
+  }
+  makeColumn(id, c, play){
+    return <Column id={id} c={c} play={this.play}/>;
   }
   render(){
-    return (
+    if (!this.state.gameOver)return (
       <div className ="game">
         <Clock/>
         <div className="board">
-          {this.makeColumn(1, this.state.column1)}
-          {this.makeColumn(2, this.state.column2)}
-          {this.makeColumn(3, this.state.column3)}
-          {this.makeColumn(4, this.state.column4)}
-          {this.makeColumn(5, this.state.column5)}
-          {this.makeColumn(6, this.state.column6)}
-          {this.makeColumn(7, this.state.column7)}
+          {this.makeColumn(this.state.column1.id, this.state.column1, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column2, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column3, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column4, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column5, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column6, this.play)}
+          {this.makeColumn(this.state.column1.id, this.state.column7, this.play)}
         </div>
       </div>
     );
+    else return <h1>Oh shiiiittttt</h1>
   }
 }
 
@@ -64,6 +75,11 @@ class Column extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
+    this.columnClick();
+    this.props.play(this.state.id, this.state.col1, this.state.col2, this.state.col3, this.state.col4, this.state.col5, this.state.col6);
+  }
+
+  columnClick(){
     redTurn = !redTurn;
     this.setState((state, props) => {
       if(redTurn){
