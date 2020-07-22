@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
 import './index.css';
-//import App from './App';
-//import * as serviceWorker from './serviceWorker';
-//import { ReactComponent } from '*.svg';
 
 var redTurn = true;
 
@@ -20,22 +17,7 @@ class App extends React.Component{
       column7: {s6: "circle",s5:"circle",s4:"circle",s3:"circle",s2:"circle",s1:"circle"},
     }
     this.play = this.play.bind(this);
-  }/*
-  changeBoard(id, col1, col2, col3, col4, col5, col6){ // should take it updated column and update state
-    // if color of column is changed, make that change in this,state of board
-    if(id == 1){
-      this.setState((state, props) => {
-        s6: "col1.col1",
-        state.column1.s5 = "col1.col2",
-        state.column1.s4 = "col1.col3",
-        state.column1.s3 = "col1.col4",
-        state.column1.s2 = "col1.col5",
-        state.column1.s1 = "col1.col6"
-      });
-    }
-    
-    this.board = this.board.bind(this);
-  }*/
+  }
   play(){
      // on a click, if the square in the column is white, it changes to the correct player color, if not, nothing happens
   }
@@ -43,19 +25,6 @@ class App extends React.Component{
     return <Column id={id} c={c}/>;
   }
   render(){
-    /*
-    if(this.state.column1.s6 === "circle" && this.state.column1.s5 === "circle" 
-    & this.state.column1.s4 === "circle" && this.state.column1.s3 === "circle"){
-      return (
-        <div className ="game">
-        <Clock/>
-        <div className="board">
-          {this.makeColumn(1, this.state.column1)}
-        </div>
-      </div>
-      )
-    }
-    else */
     return (
       <div className ="game">
         <Clock/>
@@ -119,7 +88,6 @@ class Column extends React.Component{
     return <Square id={id} col={col}/>;
   }
   render(){
-    //changeBoard(this.state.id, this.state.col1, this.state.col2, this.state.col3, this.state.col4, this.state.col5, this.state.col6);
     return(
       <div className="column" onClick={this.handleClick}>
         <div>{this.makeCell(this.state.c1, this.state.col1)}</div> 
@@ -150,7 +118,6 @@ class Square extends React.Component{
       </td>
     );
   }
-  // on click in square calls game fucntion in App that changes color, changes turn, and looks for win
 }
 
 
@@ -189,12 +156,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
-
-
-
-// onclick={() => {play(columnIndex)}}
