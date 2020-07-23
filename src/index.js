@@ -19,11 +19,25 @@ class App extends React.Component{
     }
     this.play = this.play.bind(this);
   }
+  // some part of this si not working.  What? Why? Either the sate is not being updated or a method is not executing properly
   play(id, col1, col2, col3, col4, col5, col6){
-    this.setState((prevState) => {
-      // use prev state but update column that was added to
-    });
-    checkGameEnds();
+    //find and select the column that matches the id 
+    var column;
+    for(column in this.state){
+      if(column.id===id){
+        this.setState((prevState) => {
+          return(
+            column.s1= col1,
+            column.s2= col2,
+            column.s3= col3,
+            column.s4= col4,
+            column.s5= col5,
+            column.s6= col6
+          )
+        });
+      }
+    }
+    this.checkGameEnds();
      // on a click, if the square in the column is white, it changes to the correct player color, if not, nothing happens
   }
   checkGameEnds(){
