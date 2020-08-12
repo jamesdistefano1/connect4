@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/connect4/static/css/main.124433f8.chunk.css",
+    "main.js": "/connect4/static/js/main.887e71f6.chunk.js",
+    "main.js.map": "/connect4/static/js/main.887e71f6.chunk.js.map",
+    "runtime-main.js": "/connect4/static/js/runtime-main.d270a1e4.js",
+    "runtime-main.js.map": "/connect4/static/js/runtime-main.d270a1e4.js.map",
+    "static/js/2.9810ad00.chunk.js": "/connect4/static/js/2.9810ad00.chunk.js",
+    "static/js/2.9810ad00.chunk.js.map": "/connect4/static/js/2.9810ad00.chunk.js.map",
+    "index.html": "/connect4/index.html",
+    "precache-manifest.bab266b13bba4357a9a2c88c704e4c7e.js": "/connect4/precache-manifest.bab266b13bba4357a9a2c88c704e4c7e.js",
+    "service-worker.js": "/connect4/service-worker.js",
+    "static/css/main.124433f8.chunk.css.map": "/connect4/static/css/main.124433f8.chunk.css.map",
+    "static/js/2.9810ad00.chunk.js.LICENSE.txt": "/connect4/static/js/2.9810ad00.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d270a1e4.js",
+    "static/js/2.9810ad00.chunk.js",
+    "static/css/main.124433f8.chunk.css",
+    "static/js/main.887e71f6.chunk.js"
+  ]
+}
